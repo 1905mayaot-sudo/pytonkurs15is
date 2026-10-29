@@ -1,4 +1,3 @@
-
 const form = document.querySelector('#lead-form');
 const note = document.querySelector('#form-note');
 const toast = document.querySelector('#toast');
@@ -9,8 +8,10 @@ const FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwrTHltcP8YQ0rf2s
 
 const purchaseStage = document.querySelector('.purchase-stage');
 const purchaseButton = document.querySelector('.purchase-button');
+const purchaseMascots = document.querySelectorAll('dotlottie-wc.mascot');
 purchaseButton?.addEventListener('click', () => {
   purchaseStage?.classList.add('celebrate');
+  purchaseMascots.forEach((mascot) => mascot.dotLottie?.play());
   window.setTimeout(() => purchaseStage?.classList.remove('celebrate'), 1800);
 });
 
