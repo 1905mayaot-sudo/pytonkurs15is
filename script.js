@@ -1,3 +1,4 @@
+
 const form = document.querySelector('#lead-form');
 const note = document.querySelector('#form-note');
 const toast = document.querySelector('#toast');
@@ -5,6 +6,13 @@ let toastTimer;
 
 // Set this to the deployed Google Apps Script Web App URL after publishing it.
 const FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwrTHltcP8YQ0rf2sDvQZXoAMCUcwC8_GHV-Eq8IiJaDHqeS5XCrQXf_k5aR5Pt5Mj7/exec';
+
+const purchaseStage = document.querySelector('.purchase-stage');
+const purchaseButton = document.querySelector('.purchase-button');
+purchaseButton?.addEventListener('click', () => {
+  purchaseStage?.classList.add('celebrate');
+  window.setTimeout(() => purchaseStage?.classList.remove('celebrate'), 1800);
+});
 
 form.addEventListener('submit', async (event) => {
   event.preventDefault();
